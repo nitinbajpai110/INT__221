@@ -1,100 +1,120 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+<link href="{{ asset('/css/header.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/index.css') }}" rel="stylesheet">
+    
+<link href="{{ asset('/css/font.css') }}" rel="stylesheet">
+    
+<link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+</head>
+<body link="blue">
+    <div id="main-container-div">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        <div class="header">
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+            <input class="topButtons1" type="button" value="Sign Up" data-toggle="modal" data-target="#exampleModalSignUp">
+            <input class="topButtons2" type="button" value="Sign In" data-toggle="modal" data-target="#exampleModal">
+            <a id="pageTitle" class="logo-title">WeEBlY</a>
+            <p class="middleText">Explore Imagine Create</p>
+              
         </div>
-    </body>
+        <div class="postButtons">
+
+          <button type="button" id="allpost"><a href="blogs" >All Posts</a></button>
+          <button type="button" id="createpost"><a href="create" >Create Post</a></button>
+
+        </div>
+    </div>
+    <div >
+    
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title1">Welcome Back!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                                <label class="label">Username</label>
+                                <input type="text" class="form-control" placeholder="Enter Username" required="required">
+                            </div>
+                        <div class="form-group">
+                                <label  class="label">Password</label>
+                                <input type="password" class="form-control"  placeholder="Enter Password" required="required">
+                            </div>
+                                 <button type="submit" class="btn btn-primary" id="signinbtn">Sign In</button>
+                        <div class="form-group">
+                                 <label id="notamember">Not a member?</label><a data-toggle="modal" href="#exampleModalSignUp" id="lnk">Sign Up</a>
+                            </div>
+                  
+                   </form>
+            </div>
+ 
+          </div>
+        </div>
+      </div>
+     
+
+    </div>
+    
+    <div>
+      <div class="modal fade" id="exampleModalSignUp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title2" >Get Started</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <form>
+                            <div class="form-group">
+                                    <label  class="label">Full Name</label>
+                                    <input type="text" class="form-control"  placeholder="Enter Full Name" required="required">
+                                </div>
+                            <div class="form-group">
+                                     <label   class="label">Username</label>
+                                     <input type="text" class="form-control"  placeholder="Enter Username" required="required">
+                                </div>
+                            <div class="form-group">
+                                     <label  class="label">Password</label>
+                                     <input type="password" class="form-control" id="password1" placeholder="Enter Password" required="required">
+                                </div>
+                            <div class="form-group">
+                                     <label  class="label" >Confirm Password</label>
+                                     <input type="password" class="form-control" id="password2" placeholder="Confirm Password"required="required">
+                                </div>
+                                      <button type="submit" class="btn btn-primary" id="signupbtn" onclick="verify()" >Sign Up</button>
+                      </form>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+
+   
+
+    </div>
+ 
+    <script src="{{ asset('/js/jquery.js') }}"> </script>
+   
+    <script src="{{ asset('/js/bootstrap.min.js') }}"> </script>
+    <!-- Place all Javascript for header in this file -->
+    <script src="{{ asset('/js/header.js') }}"> </script>
+	
+    <!-- Place all Javascript for rest of the elements in this file -->
+    <script src="{{ asset('/js/index.js') }}"> </script>
+   
+    
+</body>
 </html>
