@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/blogs', function () {
+    return view('bloglist');
+});
+Route::get('/post', function () {
+    return view('post');
+});
+Route::get('/create', function () {
+    return view('creat');
+});
